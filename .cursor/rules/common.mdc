@@ -25,6 +25,8 @@ alwaysApply: true
   - Pinia
 - 构建工具：
   - HBuilderX
+- 图标库：
+  - [iconfont](https://www.iconfont.cn/)
 
 
 # 目标
