@@ -12,8 +12,20 @@ alwaysApply: true
 
 # 技术栈
 
-- [uniapp](https://uniapp.dcloud.net.cn/)
-- [uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html)
+- 框架：
+  - [Vue3](https://cn.vuejs.org/guide/introduction)
+  - [Pinia](https://pinia.vuejs.org/zh/introduction.html)
+  - [uniapp](https://uniapp.dcloud.net.cn/)
+  - [uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html)
+- 语言：
+  - Vue3、JavaScript
+- 样式：
+  - SCSS/CSS
+- 状态管理：
+  - Pinia
+- 构建工具：
+  - HBuilderX
+
 
 # 目标
 
