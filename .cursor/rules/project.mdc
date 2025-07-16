@@ -20,7 +20,16 @@ alwaysApply: true
 - 包含下拉刷新 (onPullDownRefresh) 和上拉加载更多 (onReachBottom) 的逻辑
 - 在数据加载时显示一个 loading 状态
 - 如果列表为空，显示一个“暂无数据”的提示
+
+#### 简单列表
+
 - 使用 `uni-list` 和 `uni-list-item` 组件来渲染列表
+
+#### 复杂列表
+
+- 使用 uni_modules/z-paging 插件实现
+- 充分阅读[z-paging 文档](https://z-paging.zxlee.cn/) 
+
 
 ### 表单页面
 

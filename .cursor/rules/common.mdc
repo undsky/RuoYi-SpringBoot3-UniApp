@@ -17,6 +17,8 @@ alwaysApply: true
   - [Pinia](https://pinia.vuejs.org/zh/introduction.html)
   - [uniapp](https://uniapp.dcloud.net.cn/)
   - [uni-ui](https://uniapp.dcloud.net.cn/component/uniui/uni-ui.html)
+  - [z-paging](https://z-paging.zxlee.cn/)
+  - [mp-html](https://jin-yufeng.github.io/mp-html/#/overview/quickstart)
 - 语言：
   - Vue3、JavaScript
 - 样式：
