@@ -7,9 +7,9 @@
 ######################################################################
 # Development Tools
 
-/.idea/*
-/.vscode/*
-/.hbuilderx/*
+# /.idea/*
+# /.vscode/*
+# /.hbuilderx/*
 
 package-lock.json
 yarn.lock

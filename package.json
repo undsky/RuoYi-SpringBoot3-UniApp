@@ -15,5 +15,19 @@
   "description": "",
   "dependencies": {
     "jsencrypt": "^3.3.2"
-  }
+  },
+	"uni-app": {
+		"scripts": {
+			"electron": {
+				"title": "electron",
+				"BROWSER": "chrome",
+				"env": {
+					"UNI_PLATFORM": "h5"
+				},
+				"define": {
+					"ELECTRON": true
+				}
+			}
+		}
+	}
 }
