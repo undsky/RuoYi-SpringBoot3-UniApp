@@ -3,11 +3,6 @@
 </p>
 <h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">RuoYi SpringBoot3 UniApp v1.2.0</h1>
 <h4 align="center">基于 Vue3 + UniApp 的跨平台移动端快速开发框架</h4>
-<p align="center">
-	<a href="https://gitee.com/mc-springboot/RuoYi-SpringBoot3-UniApp/stargazers"><img src="https://gitee.com/mc-springboot/RuoYi-SpringBoot3-UniApp/badge/star.svg?theme=dark"></a>
-	<a href="https://gitee.com/mc-springboot/RuoYi-SpringBoot3-UniApp"><img src="https://img.shields.io/badge/RuoYi%20UniApp-v1.2.0-brightgreen.svg"></a>
-	<a href="https://gitee.com/mc-springboot/RuoYi-SpringBoot3-UniApp/blob/master/LICENSE"><img src="https://img.shields.io/github/license/mashape/apistatus.svg"></a>
-</p>
 
 ## 平台简介
 
