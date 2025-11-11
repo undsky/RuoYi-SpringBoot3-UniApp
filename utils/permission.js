@@ -12,7 +12,16 @@ export function checkPermi(value) {
     const all_permission = "*:*:*"
 
     const hasPermission = permissions.some(permission => {
-      return all_permission === permission || permissionDatas.includes(permission)
+      let has = all_permission === permission || permissionDatas.includes(permission);
+      if (!has) {
+          for (const permi of permissionDatas) {
+              if (permi.startsWith(permission.trim())) {
+                  has = true;
+                  break;
+              }
+          }
+      }
+      return has;
     })
 
     if (!hasPermission) {
