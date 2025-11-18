@@ -33,9 +33,9 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 | **iOS App** | ✅ 完全支持 | 原生 iOS 应用 |
 | **Electron** | ✅ 实验支持 | 跨平台桌面应用 |
 
-### 2. 🎯 Cursor AI 智能开发
+### 2. 🎯 Cursor/Windsurf AI 智能开发
 
-内置 Cursor Rules 开发规则，AI 辅助编码：
+内置 AI 开发规则，支持 **Cursor** 和 **Windsurf** 两大 AI IDE，提供卓越的 AI 辅助编码体验：
 
 - **自动代码建议**：AI 按项目规范自动生成代码
 - **代码质量审查**：实时检测代码问题并提供改进建议
@@ -44,7 +44,8 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 - **快速重构**：一键重构代码符合规范
 - **团队协作**：统一的编码标准和规范
 - **Context7 集成**：自动获取最新技术文档
-- **开箱即用**：在 Cursor IDE 中打开即可使用
+- **双 IDE 支持**：在 Cursor 或 Windsurf 中打开即可使用
+- **规则同步**：两个 IDE 共享相同的开发规则
 
 ### 3. 🎨 Vue3 组合式 API
 
@@ -548,29 +549,29 @@ const htmlContent = ref('<p>这是富文本内容</p>')
 </script>
 ```
 
-## Cursor Rules 智能开发
+## AI IDE 智能开发(Cursor/Windsurf)
 
-项目内置 Cursor AI 开发规则，提升开发效率和代码质量。
+项目内置 AI 开发规则，完美支持 **Cursor** 和 **Windsurf** 两大 AI IDE，提升开发效率和代码质量。
 
 ### 规则配置
 
-项目在 `.cursor/rules/` 目录下配置了以下规则文件：
+项目在 `.cursor/rules/` 和 `.windsurf/rules/` 目录下配置了以下规则文件：
 
-| 规则文件 | 说明 | 应用范围 |
-|---------|------|---------|
-| `common.mdc` | 通用开发规则 | 全局应用 |
-| `clean-code.mdc` | 简洁代码指南 | 所有代码文件 |
-| `codequality.mdc` | 代码质量规范 | 所有代码文件 |
-| `vue.mdc` | Vue 最佳实践 | Vue 文件 |
-| `vue-3-composition-api.mdc` | Vue3 组合式 API 指南 | Vue 文件 |
-| `vue-3-project-structure.mdc` | Vue3 项目结构规范 | 全局应用 |
-| `uniapp-project-structure.mdc` | UniApp 项目结构规范 | 全局应用 |
+| 规则文件 | 说明 | 应用范围 | IDE 支持 |
+|---------|------|---------|---------|
+| `common.md` | 通用开发规则 | 全局应用 | Cursor & Windsurf |
+| `clean-code.md` | 简洁代码指南 | 所有代码文件 | Cursor & Windsurf |
+| `codequality.md` | 代码质量规范 | 所有代码文件 | Cursor & Windsurf |
+| `vue.md` | Vue 最佳实践 | Vue 文件 | Cursor & Windsurf |
+| `vue-3-composition-api.md` | Vue3 组合式 API 指南 | Vue 文件 | Cursor & Windsurf |
+| `vue-3-project-structure.md` | Vue3 项目结构规范 | 全局应用 | Cursor & Windsurf |
+| `uniapp-project-structure.md` | UniApp 项目结构规范 | 全局应用 | Cursor & Windsurf |
 
 ### 使用方式
 
 **自动应用**
 
-在 Cursor IDE 中打开项目，规则会自动生效：
+在 **Cursor** 或 **Windsurf** IDE 中打开项目，规则会自动生效：
 
 1. **智能代码建议**
    - AI 助手会遵循项目规范生成代码
@@ -581,12 +582,13 @@ const htmlContent = ref('<p>这是富文本内容</p>')
    - 提供符合规范的改进建议
 
 3. **快速开发**
-   - 使用 `Ctrl+K`（或 `Cmd+K`）唤起 AI 助手
+   - **Cursor**: 使用 `Ctrl+K`(或 `Cmd+K`)唤起 AI 助手
+   - **Windsurf**: 使用 `Ctrl+L` 打开 Cascade 面板
    - 描述需求，AI 会按规则生成代码
 
 **手动触发**
 
-在 Cursor 中与 AI 对话时，提及规则名称：
+在 Cursor 或 Windsurf 中与 AI 对话时，提及规则名称：
 
 ```
 请按照 vue-3-composition-api 规则实现用户列表页面
@@ -848,7 +850,7 @@ server {
 
 ### v1.2.0 (2024-XX-XX)
 
-- ✨ 新增 Cursor Rules 智能开发规则
+- ✨ 新增 Cursor/Windsurf AI 智能开发规则
 - ✨ 升级到 Vue3 组合式 API
 - ✨ 集成 Pinia 状态管理
 - ✨ 集成 z-paging 分页组件
