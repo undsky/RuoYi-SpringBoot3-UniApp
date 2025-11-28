@@ -469,12 +469,6 @@ const htmlContent = ref('<p>这是富文本内容</p>')
 3. 提交代码
 4. 新建 Pull Request
 
-## 技术支持
-
-- **官方文档**：http://doc.ruoyi.vip
-- **UniApp 文档**：https://uniapp.dcloud.net.cn/
-- **Gitee**：https://gitee.com/mc-springboot/RuoYi-SpringBoot3-UniApp
-- **后端项目**：https://gitee.com/y_project/RuoYi-App/tree/vue3/
 
 ## 鸣谢
 
@@ -484,7 +478,15 @@ const htmlContent = ref('<p>这是富文本内容</p>')
 - [z-paging](https://z-paging.zxlee.cn/)：分页组件
 - [mp-html](https://jin-yufeng.github.io/mp-html/)：富文本组件
 
+## 📞 联系方式
+
+- 网站：[https://www.undsky.com](https://www.undsky.com)
+- GitHub：[https://github.com/undsky/RuoYi-SpringBoot3-UniApp](https://github.com/undsky/RuoYi-SpringBoot3-UniApp)
+- Issues：[https://github.com/undsky/RuoYi-SpringBoot3-UniApp/issues](https://github.com/undsky/RuoYi-SpringBoot3-UniApp/issues)
+
 ---
+
+
 
 ⭐ 如果觉得项目不错，请点个 Star 支持一下！
 
