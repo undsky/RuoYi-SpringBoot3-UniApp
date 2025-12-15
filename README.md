@@ -12,6 +12,10 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 本项目提供完整的移动端开发框架，包含登录认证、个人中心、工作台等常用功能模块，采用最新技术栈和最佳实践，帮助开发者快速构建跨平台移动应用。
 
 
+![公众号](https://cdn.undsky.com/img/ghss.png)
+ > 关注公众号，聚焦 AI 应用落地与开发经验分享
+
+
 ## 📑 目录
 
 - [平台简介](#平台简介)
