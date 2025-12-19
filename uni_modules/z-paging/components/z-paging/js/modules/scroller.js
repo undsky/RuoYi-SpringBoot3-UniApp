@@ -48,6 +48,11 @@ export default {
 			type: String,
 			default: u.gc('scrollIntoView', '')
 		},
+		// z-paging是否使用swiper-item或其他父组件包裹，默认为否，此属性为了解决vue3+(微信小程序或QQ小程序)中，scrollIntoViewById和scrollIntoViewByIndex因无法获取节点信息导致滚动到指定view无效的问题
+		inSwiperSlot: {
+			type: Boolean,
+			default: false
+		},
 	},
 	data() {
 		return {
@@ -302,6 +307,13 @@ export default {
 				this.scrollTop = 0;
 				this.oldScrollTop = this.scrollTop;
 			});
+			u.delay(() => {
+				this.scrollTop = this.oldScrollTop;
+				this.$nextTick(() => {
+					this.scrollTop = 0;
+					this.oldScrollTop = this.scrollTop;
+				});
+			}, 500)
 		},
 		// 滚动到底部
 		async _scrollToBottom(animate = true) {
@@ -371,7 +383,17 @@ export default {
 					return;
 					// #endif
 					// 获取指定view的节点信息
-					this._getNodeClientRect('#' + sel.replace('#', ''), false).then((node) => {
+					let inDom = false;
+					// 在vue3+(微信小程序或QQ小程序)中，无法获取节点信息导致滚动到指定view无效的问题
+					// 通过uni.createSelectorQuery().in(this.$parent)来解决此问题
+					// #ifdef VUE3
+					// #ifdef MP-WEIXIN || MP-QQ
+					if (this.inSwiperSlot) {
+						inDom = this.$parent;
+					}
+					// #endif
+					// #endif
+					this._getNodeClientRect('#' + sel.replace('#', ''), inDom).then((node) => {
 						if (node) {
 							// 获取zp-scroll-view-container的节点信息
 							this._getNodeClientRect('.zp-scroll-view-container').then((svContainerNode) => {
@@ -471,10 +493,15 @@ export default {
 			// #endif
 			this.oldScrollTop = scrollTop;
 			this.oldScrollLeft = scrollLeft;
-			// 滚动区域内容的总高度 - 当前滚动的scrollTop = 当前滚动区域的顶部与内容底部的距离
-			const scrollDiff = e.detail.scrollHeight - this.oldScrollTop;
 			// 在非ios平台滚动中，再次验证一下是否滚动到了底部。因为在一些安卓设备中，有概率滚动到底部不触发@scrolltolower事件，因此添加双重检测逻辑
-			!this.isIos && this._checkScrolledToBottom(scrollDiff);
+			// 排除快手的情况，因为在快手安卓中双重检测会导致滚动到底部事件多次触发
+			// #ifndef MP-KUAISHOU
+			if (!this.isIos) {
+				// 滚动区域内容的总高度 - 当前滚动的scrollTop = 当前滚动区域的顶部与内容底部的距离
+				const scrollDiff = e.detail.scrollHeight - this.oldScrollTop;
+				this._checkScrolledToBottom(scrollDiff);
+			}
+			// #endif
 		},
 		// emit scrolltolower/scrolltoupper事件
 		_emitScrollEvent(type) {

@@ -4,7 +4,7 @@
   / /_____| |_) | (_| | (_| | | | | | (_| |
  /___|    | .__/ \__,_|\__, |_|_| |_|\__, |
           |_|          |___/         |___/ 
-v2.8.7 (2025-05-30)
+v2.8.8 (2025-08-29)
 @author ZXLee <admin@zxlee.cn>
 -->
 <!-- 文档地址：https://z-paging.zxlee.cn -->
@@ -16,7 +16,7 @@ v2.8.7 (2025-05-30)
 	<!-- #ifndef APP-NVUE -->
 	<view :class="[{'z-paging-content':true,'z-paging-content-full':!usePageScroll,'z-paging-content-fixed':!usePageScroll&&fixed,'z-paging-content-page':usePageScroll,'z-paging-reached-top':renderPropScrollTop<1,'z-paging-use-chat-record-mode':useChatRecordMode}, pagingClass]" :style="[finalPagingStyle]">
 		<!-- #ifndef APP-PLUS -->
-		<view v-if="cssSafeAreaInsetBottom===-1" class="zp-safe-area-inset-bottom"></view>
+		<view v-if="cssSafeAreaInsetBottom===-1" class="zp-safe-area-inset-bottom" style="position: absolute"/>
 		<!-- #endif -->
 		<!-- 二楼view -->
 		<view v-if="showF2 && showRefresherF2" @touchmove.stop.prevent class="zp-f2-content" :style="[{'transform': f2Transform, 'transition': `transform .2s linear`, 'height': superContentHeight + 'px', 'z-index': f2ZIndex}]">
@@ -145,6 +145,7 @@ v2.8.7 (2025-05-30)
 									<!-- 底部安全区域useSafeAreaPlaceholder模式占位，此时占位不再固定在底部而是跟随页面一起滚动 -->
 									<!-- 如果底部slot=bottom存在，占位区域会插入在slot=bottom下方，不再跟随页面滚动，因此这里就没必要显示了 -->
 									<!-- 聊天记录模式因为列表倒置，此处不需要显示底部安全区域，另行处理 -->
+									
 									<view v-if="safeAreaInsetBottom&&finalUseSafeAreaPlaceholder&&!useChatRecordMode" class="zp-safe-area-placeholder" :style="[{height:safeAreaBottom+'px'}]" />
 								</view>
 								<!-- 空数据图 -->
@@ -173,13 +174,29 @@ v2.8.7 (2025-05-30)
 				<view v-else class="zp-page-bottom" @touchmove.stop.prevent :style="[{'bottom': `${windowBottom}px`, 'background': bottomBgColor}]">
 					<slot name="bottom" />
 					<!-- 页面滚动底部安全区域占位(仅slot=bottom存在时展示在slot=bottom插入的view下方，当slot=bottom不存在时，通过控制容器的marginBottom设置底部安全区域间距) -->
-					<view v-if="safeAreaInsetBottom" :style="[{height:safeAreaBottom+'px'}]" />
+					<template v-if="safeAreaInsetBottom">
+						<!-- 如果是App，则使用style中的safeAreaBottom设置高度，非APP使用class，因为class中的env(safe-area-inset-bottom)在部分app中无效 -->
+						<!-- #ifdef APP-PLUS -->
+						<view :style="[{height:safeAreaBottom+'px'}]" />
+						<!-- #endif -->
+						<!-- #ifndef APP-PLUS -->
+						<view class="zp-safe-area-inset-bottom" />
+						<!-- #endif -->
+					</template>
 				</view>
 			</template>
 			<!-- 非页面滚动底部安全区域占位(无论slot=bottom是否存在)-->
 			<!-- 如果useSafeAreaPlaceholder开启了并且slot=bottom不存在就不显示这个占位view了，因为此时useSafeAreaPlaceholder会是跟随滚动的状态 -->
 			<!-- 聊天记录模式因为列表倒置，此处不需要显示底部安全区域，另行处理 -->
-			<view v-if="safeAreaInsetBottom&&!usePageScroll&&!(finalUseSafeAreaPlaceholder)&&!useChatRecordMode" :style="[{height:safeAreaBottom+'px'}]" />
+			<template v-if="safeAreaInsetBottom&&!usePageScroll&&!(finalUseSafeAreaPlaceholder)&&!useChatRecordMode">
+				<!-- 如果是App，则使用style中的safeAreaBottom设置高度，非APP使用class，因为class中的env(safe-area-inset-bottom)在部分app中无效 -->
+				<!-- #ifdef APP-PLUS -->
+				<view :style="[{height:safeAreaBottom+'px'}]" />
+				<!-- #endif -->
+				<!-- #ifndef APP-PLUS -->
+				<view class="zp-safe-area-inset-bottom" />
+				<!-- #endif -->
+			</template>
 			
 			<!-- 聊天记录模式底部占位 -->
 			<template v-if="useChatRecordMode&&autoAdjustPositionWhenChat">
@@ -568,7 +585,8 @@ v2.8.7 (2025-05-30)
 	 * @property {String} virtualCellIdPrefix 虚拟列表cell id的前缀
 	 * @property {Boolean} useInnerList 是否在z-paging内部循环渲染列表(使用内置列表)，默认为false
 	 * @property {Boolean} forceCloseInnerList 强制关闭inner-list，默认为false
-	 * @property {Boolean} virtualInSwiperSlot 虚拟列表是否使用swiper-item包裹，默认为false
+	 * @property {Boolean} virtualInSwiperSlot 虚拟列表是否使用swiper-item或其他父组件包裹，默认为false
+	 * @property {Boolean} inSwiperSlot z-paging是否使用swiper-item或其他父组件包裹，默认为否
 	 * @property {String} cellKeyName 内置列表cell的key名称(仅nvue有效)
 	 * @property {Object} innerListStyle innerList样式
 	 * @property {Object} innerCellStyle innerCell样式
