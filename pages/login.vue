@@ -34,6 +34,27 @@
         <text @click="handlePrivacy" class="text-blue">《隐私协议》</text>
       </view>
     </view>
+    
+    <!-- SMS Verification Modal -->
+    <view class="cu-modal" :class="smsDialogVisible ? 'show' : ''">
+      <view class="cu-dialog">
+        <view class="cu-bar bg-white justify-end">
+          <view class="content">请输入手机验证码</view>
+          <view class="action" @click="cancelSms">
+            <text class="cuIcon-close text-red"></text>
+          </view>
+        </view>
+        <view class="padding-xl">
+           <input v-model="loginForm.smsCode" class="uni-input" type="number" placeholder="请输入收到的验证码" />
+        </view>
+        <view class="cu-bar bg-white justify-end">
+          <view class="action">
+            <button class="cu-btn line-green text-green" @click="cancelSms">取消</button>
+            <button class="cu-btn bg-green margin-left" @click="handleLoginBySms">确定</button>
+          </view>
+        </view>
+      </view>
+    </view>
      
   </view>
 </template>
@@ -54,10 +75,13 @@
   const register = ref(false)
   const loginForm = ref({
     username: "admin",
-    password: "admin123",
+    password: "jyx_692483",
     code: "",
-    uuid: ""
+    uuid: "",
+    smsCode: ""
   })
+  const smsDialogVisible = ref(false)
+  const secondaryVerificationEnabled = globalConfig.secondaryVerificationEnabled === undefined ? false : globalConfig.secondaryVerificationEnabled
 
   // 用户注册
   function handleUserRegister() {
@@ -106,11 +130,31 @@
     useUserStore().login(loginForm.value).then(() => {
       proxy.$modal.closeLoading()
       loginSuccess()
-    }).catch(() => {
-      if (captchaEnabled.value) {
-        getCode()
+    }).catch((e) => {
+      if (e === "sms" && secondaryVerificationEnabled) {
+        proxy.$modal.closeLoading()
+        smsDialogVisible.value = true
+      } else {
+        if (captchaEnabled.value) {
+          getCode()
+        }
       }
     })
+  }
+
+  function cancelSms() {
+    smsDialogVisible.value = false;
+    loginForm.value.smsCode = "";
+  }
+
+  function handleLoginBySms() {
+     if (loginForm.value.smsCode && loginForm.value.smsCode.length === 6) {
+        smsDialogVisible.value = false;
+        proxy.$modal.loading("验证中...")
+        pwdLogin();
+     } else {
+        proxy.$modal.msgError("请输入6位验证码")
+     }
   }
 
   // 登录成功后，处理函数

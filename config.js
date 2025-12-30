@@ -2,6 +2,8 @@
 export default {
   // baseUrl: 'https://vue.ruoyi.vip/prod-api',
   baseUrl: 'http://localhost:8087',
+  // 是否开启二次验证
+  secondaryVerificationEnabled: false,
   // 应用信息
   appInfo: {
     // 应用名称
