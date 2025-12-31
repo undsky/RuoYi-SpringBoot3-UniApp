@@ -1,20 +1,18 @@
 <p align="center">
 	<img alt="logo" src="https://oscimg.oschina.net/oscnet/up-d3d0a9303e11d522a06cd263f3079027715.png">
 </p>
-<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">RuoYi SpringBoot3 UniApp v1.2.0</h1>
+<h1 align="center" style="margin: 30px 0 30px; font-weight: bold;">RuoYi SpringBoot3 UniApp v3.9.1</h1>
 <h4 align="center">基于 Vue3 + UniApp 的跨平台移动端快速开发框架</h4>
-
 
 ## 平台简介
 
-RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi-App/tree/vue3/) 的移动端解决方案，采用 Vue3 + UniApp 技术栈，实现一套代码多端运行（微信小程序、App、H5、Electron桌面端）。
+RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi-App/tree/vue3/) 的移动端解决方案，采用 Vue3 + UniApp 技术栈，实现一套代码多端运行（微信小程序、App、H5、Electron 桌面端）。
 
 本项目提供完整的移动端开发框架，包含登录认证、个人中心、工作台等常用功能模块，采用最新技术栈和最佳实践，帮助开发者快速构建跨平台移动应用。
 
-
 ![公众号](https://cdn.undsky.com/img/ghss.png)
- > 关注公众号，聚焦 AI 应用落地与开发经验分享
 
+> 关注公众号，聚焦 AI 应用落地与开发经验分享
 
 ## 📑 目录
 
@@ -31,7 +29,8 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 - [鸣谢](#鸣谢)
 - [联系方式](#联系方式)
 
-##  后端项目
+## 后端项目
+
 - 💻 https://github.com/undsky/RuoYi-SpringBoot3-Pro
 
 ## ✨ 核心特性
@@ -40,15 +39,15 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 
 一套代码，多端运行：
 
-| 平台 | 支持状态 | 说明 |
-|------|---------|------|
-| **微信小程序** | ✅ 完全支持 | 适配微信小程序环境 |
-| **H5** | ✅ 完全支持 | 支持浏览器访问 |
-| **Android App** | ✅ 完全支持 | 原生 Android 应用 |
-| **iOS App** | ✅ 完全支持 | 原生 iOS 应用 |
-| **Electron** | ✅ 实验支持 | 跨平台桌面应用 |
+| 平台            | 支持状态    | 说明               |
+| --------------- | ----------- | ------------------ |
+| **微信小程序**  | ✅ 完全支持 | 适配微信小程序环境 |
+| **H5**          | ✅ 完全支持 | 支持浏览器访问     |
+| **Android App** | ✅ 完全支持 | 原生 Android 应用  |
+| **iOS App**     | ✅ 完全支持 | 原生 iOS 应用      |
+| **Electron**    | ✅ 实验支持 | 跨平台桌面应用     |
 
-### 2.  Vue3 组合式 API
+### 2. Vue3 组合式 API
 
 全面采用 Vue3 最新特性：
 
@@ -123,6 +122,7 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 - **快速启动**：`npm run dev` 开发，`npm run prod` 生产
 
 **使用步骤**
+
 1. 构建 H5：在项目根目录运行 `npm run build:h5`
 2. 进入 electron 目录：`cd electron`
 3. 安装依赖：`npm install`
@@ -132,21 +132,21 @@ RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi
 
 ### 核心框架
 
-| 技术 | 版本 | 说明 |
-|------|------|------|
-| Vue | 3.x | 渐进式 JavaScript 框架 |
-| UniApp | Latest | 跨平台应用开发框架 |
-| Pinia | Latest | 新一代状态管理工具 |
-| uni-ui | Latest | UniApp 官方 UI 组件库 |
-| Electron | 27.1.0 | 跨平台桌面应用框架 |
+| 技术     | 版本   | 说明                   |
+| -------- | ------ | ---------------------- |
+| Vue      | 3.x    | 渐进式 JavaScript 框架 |
+| UniApp   | Latest | 跨平台应用开发框架     |
+| Pinia    | Latest | 新一代状态管理工具     |
+| uni-ui   | Latest | UniApp 官方 UI 组件库  |
+| Electron | 27.1.0 | 跨平台桌面应用框架     |
 
 ### 主要插件
 
-| 插件 | 说明 | 文档 |
-|------|------|------|
-| **z-paging** | 列表分页、下拉刷新 | [文档](https://z-paging.zxlee.cn/) |
-| **mp-html** | 富文本渲染 | [文档](https://jin-yufeng.github.io/mp-html/) |
-| **jsencrypt** | RSA 加密 | [文档](https://www.npmjs.com/package/jsencrypt) |
+| 插件          | 说明               | 文档                                            |
+| ------------- | ------------------ | ----------------------------------------------- |
+| **z-paging**  | 列表分页、下拉刷新 | [文档](https://z-paging.zxlee.cn/)              |
+| **mp-html**   | 富文本渲染         | [文档](https://jin-yufeng.github.io/mp-html/)   |
+| **jsencrypt** | RSA 加密           | [文档](https://www.npmjs.com/package/jsencrypt) |
 
 ### 工具库
 
@@ -218,9 +218,9 @@ npm install
 
 ```javascript
 export default {
-  baseUrl: 'http://localhost:8087',  // 修改为你的后端地址
+  baseUrl: "http://localhost:8087", // 修改为你的后端地址
   // ...
-}
+};
 ```
 
 #### 4. 运行项目
@@ -231,7 +231,6 @@ export default {
    - 运行到浏览器（H5）
    - 运行到小程序模拟器
    - 运行到手机或模拟器（App）
-
 
 ## 项目结构
 
@@ -289,14 +288,14 @@ RuoYi-SpringBoot3-UniApp
 
 ```javascript
 // 登录页面
-const loginPage = "/pages/login"
+const loginPage = "/pages/login";
 
 // 页面白名单（无需登录即可访问）
 const whiteList = [
-  '/pages/login', 
-  '/pages/register', 
-  '/pages/common/webview/index'
-]
+  "/pages/login",
+  "/pages/register",
+  "/pages/common/webview/index",
+];
 ```
 
 ### API 接口调用
@@ -304,60 +303,60 @@ const whiteList = [
 使用封装的 `request` 工具：
 
 ```javascript
-import request from '@/utils/request'
+import request from "@/utils/request";
 
 // GET 请求
 export function getUser() {
   return request({
-    url: '/system/user/profile',
-    method: 'get'
-  })
+    url: "/system/user/profile",
+    method: "get",
+  });
 }
 
 // POST 请求
 export function updateUser(data) {
   return request({
-    url: '/system/user/profile',
-    method: 'put',
-    data: data
-  })
+    url: "/system/user/profile",
+    method: "put",
+    data: data,
+  });
 }
 ```
 
 ### 状态管理（Pinia）
 
 ```javascript
-import { defineStore } from 'pinia'
+import { defineStore } from "pinia";
 
-export const useUserStore = defineStore('user', {
+export const useUserStore = defineStore("user", {
   state: () => ({
-    token: '',
-    userInfo: {}
+    token: "",
+    userInfo: {},
   }),
   actions: {
     setToken(token) {
-      this.token = token
+      this.token = token;
     },
     setUserInfo(info) {
-      this.userInfo = info
-    }
-  }
-})
+      this.userInfo = info;
+    },
+  },
+});
 ```
 
 在组件中使用：
 
 ```vue
 <script setup>
-import { useUserStore } from '@/store/modules/user'
+import { useUserStore } from "@/store/modules/user";
 
-const userStore = useUserStore()
+const userStore = useUserStore();
 
 // 获取数据
-console.log(userStore.token)
+console.log(userStore.token);
 
 // 修改数据
-userStore.setToken('new-token')
+userStore.setToken("new-token");
 </script>
 ```
 
@@ -365,13 +364,13 @@ userStore.setToken('new-token')
 
 ```vue
 <script setup>
-import { useDict } from '@/utils/dict'
-import { getCurrentInstance } from 'vue'
+import { useDict } from "@/utils/dict";
+import { getCurrentInstance } from "vue";
 
-const { proxy } = getCurrentInstance()
+const { proxy } = getCurrentInstance();
 
 // 加载字典
-const { sys_user_sex } = proxy.useDict('sys_user_sex')
+const { sys_user_sex } = proxy.useDict("sys_user_sex");
 
 // 在模板中使用
 </script>
@@ -408,22 +407,26 @@ const { sys_user_sex } = proxy.useDict('sys_user_sex')
 <script>
 // JavaScript 条件编译
 // #ifdef H5
-console.log('H5 平台')
+console.log("H5 平台");
 // #endif
 
 // #ifdef MP-WEIXIN
-console.log('微信小程序平台')
+console.log("微信小程序平台");
 // #endif
 </script>
 
 <style>
 /* 样式条件编译 */
 /* #ifdef H5 */
-.title { font-size: 32rpx; }
+.title {
+  font-size: 32rpx;
+}
 /* #endif */
 
 /* #ifdef MP-WEIXIN */
-.title { font-size: 28rpx; }
+.title {
+  font-size: 28rpx;
+}
 /* #endif */
 </style>
 ```
@@ -434,11 +437,7 @@ console.log('微信小程序平台')
 
 ```vue
 <template>
-  <z-paging 
-    ref="paging" 
-    v-model="dataList" 
-    @query="queryList"
-  >
+  <z-paging ref="paging" v-model="dataList" @query="queryList">
     <view v-for="item in dataList" :key="item.id">
       {{ item.name }}
     </view>
@@ -446,18 +445,18 @@ console.log('微信小程序平台')
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { getUserList } from '@/api/system/user'
+import { ref } from "vue";
+import { getUserList } from "@/api/system/user";
 
-const paging = ref(null)
-const dataList = ref([])
+const paging = ref(null);
+const dataList = ref([]);
 
 // 查询列表
 const queryList = (pageNo, pageSize) => {
-  getUserList({ pageNo, pageSize }).then(res => {
-    paging.value.complete(res.rows)
-  })
-}
+  getUserList({ pageNo, pageSize }).then((res) => {
+    paging.value.complete(res.rows);
+  });
+};
 </script>
 ```
 
@@ -471,9 +470,9 @@ const queryList = (pageNo, pageSize) => {
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const htmlContent = ref('<p>这是富文本内容</p>')
+const htmlContent = ref("<p>这是富文本内容</p>");
 </script>
 ```
 
@@ -489,7 +488,6 @@ const htmlContent = ref('<p>这是富文本内容</p>')
 2. 新建 Feat_xxx 分支
 3. 提交代码
 4. 新建 Pull Request
-
 
 ## 鸣谢
 
@@ -507,7 +505,4 @@ const htmlContent = ref('<p>这是富文本内容</p>')
 
 ---
 
-
-
 ⭐ 如果觉得项目不错，请点个 Star 支持一下！
-
