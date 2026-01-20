@@ -3,7 +3,7 @@
     <view class="header-section text-center">
       <image style="width: 150rpx;height: 150rpx;" src="/static/logo200.png" mode="widthFix">
       </image>
-      <uni-title type="h2" title="若依移动端"></uni-title>
+      <uni-title type="h2" title="若依管理系统"></uni-title>
     </view>
 
     <view class="content-section">

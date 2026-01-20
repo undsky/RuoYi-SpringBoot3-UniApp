@@ -1,4 +1,4 @@
-const TokenKey = 'App-Token'
+const TokenKey = 'RuoyiSpringBoot3-Token'
 
 export function getToken() {
   return uni.getStorageSync(TokenKey)
