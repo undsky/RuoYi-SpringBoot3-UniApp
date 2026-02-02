@@ -14,20 +14,21 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "jsencrypt": "^3.3.2"
+    "jsencrypt": "^3.3.2",
+    "sm-crypto": "^0.4.0"
   },
-	"uni-app": {
-		"scripts": {
-			"electron": {
-				"title": "electron",
-				"BROWSER": "chrome",
-				"env": {
-					"UNI_PLATFORM": "h5"
-				},
-				"define": {
-					"ELECTRON": true
-				}
-			}
-		}
-	}
+  "uni-app": {
+    "scripts": {
+      "electron": {
+        "title": "electron",
+        "BROWSER": "chrome",
+        "env": {
+          "UNI_PLATFORM": "h5"
+        },
+        "define": {
+          "ELECTRON": true
+        }
+      }
+    }
+  }
 }
