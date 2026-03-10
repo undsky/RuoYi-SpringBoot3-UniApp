@@ -6,13 +6,13 @@
 
 ## 平台简介
 
-RuoYi SpringBoot3 UniApp 是基于 [RuoYi-App](https://gitee.com/y_project/RuoYi-App/tree/vue3/) 的移动端解决方案，采用 Vue3 + UniApp 技术栈，实现一套代码多端运行（微信小程序、App、H5、Electron 桌面端）。
+RuoYi SpringBoot3 UniApp 是基于 **RuoYi-App** 的移动端解决方案，采用 Vue3 + UniApp 技术栈，实现一套代码多端运行（微信小程序、App、H5、Electron 桌面端）。
 
 本项目提供完整的移动端开发框架，包含登录认证、个人中心、工作台等常用功能模块，采用最新技术栈和最佳实践，帮助开发者快速构建跨平台移动应用。
 
-| 公众号                                       | 微信群                                                         |
-| -------------------------------------------- | -------------------------------------------------------------- |
-| ![公众号](https://cdn.undsky.com/img/gh.jpg) | ![微信群](https://cdn.undsky.com/img/doudouqun.png?v=20250117) |
+| 公众号                                       | 微信交流群                                                      |
+| -------------------------------------------- | --------------------------------------------------------------- |
+| ![公众号](https://cdn.undsky.com/img/gh.jpg) | ![微信交流群](https://cdn.undsky.com/img/doudouqun.jpg?v=2.0.1) |
 
 ## 📑 目录
 
@@ -475,6 +475,12 @@ import { ref } from "vue";
 const htmlContent = ref("<p>这是富文本内容</p>");
 </script>
 ```
+
+## 请我喝杯咖啡
+
+如果项目对你有帮助，可以请我喝杯咖啡 ☕️
+
+<img src="https://cdn.undsky.com/img/weixin10.jpg" max-width="300" height="500" /> <img src="https://cdn.undsky.com/img/zhifubao10.jpg" max-width="300" height="500" />
 
 ## 开源协议
 
